@@ -77,6 +77,17 @@ $(call Device/Legacy/rk3568,$(1))
   DEVICE_DTS = rk3568/$$(SOC)-$(lastword $(subst _, ,$(1)))
 endef
 
+define Device/100ask_dshanpi-r1
+$(call Device/Legacy/rk3568,$(1))
+  DEVICE_VENDOR := 100ASK
+  DEVICE_MODEL := DShanPi R1
+  DEVICE_DTS := rk3568/rk3568-100ask-dshanpi-r1
+  BOOT_SCRIPT := rk3568
+  DEVICE_PACKAGES +=  kmod-rknpu 
+endef
+TARGET_DEVICES += 100ask_dshanpi-r1
+
+
 define Device/easepi_r1
 $(call Device/Legacy/rk3568,$(1))
   DEVICE_VENDOR := EasePi

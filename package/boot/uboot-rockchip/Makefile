@@ -181,6 +181,13 @@ define U-Boot/rk3566/Default
   TPL:=rk3566_ddr_1056MHz_v1.21.bin
 endef
 
+define U-Boot/dshanpi-r1-rk3568
+  $(U-Boot/rk3568/Default)
+  NAME:=DshanPI R1
+  BUILD_DEVICES:= \
+    100ask_dshanpi-r1
+endef
+
 define U-Boot/nanopi-r3s-rk3566
   $(U-Boot/rk3566/Default)
   NAME:=NanoPi R3S
@@ -386,6 +393,7 @@ UBOOT_TARGETS := \
   radxa-e25-rk3568 \
   rock-3a-rk3568 \
   rock-3b-rk3568 \
+  dshanpi-r1-rk3568 \
   easepi-rk3588 \
   easepi-rk3588-lp4-1866 \
   easepi-rk3588-uart2-115200 \
